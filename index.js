@@ -13,7 +13,7 @@ io.on('connection', function(socket){
   socket.on('adduser', function(username){
 	
 		socket.username = username;
-		ms="has connected";
+		ms=" is connected";
 		io.emit('chat message',socket.username, ms)
 		usernames[username] = username;
 		 });
@@ -23,7 +23,7 @@ io.on('connection', function(socket){
   });
   
  socket.on('disconnect', function(){
-    ms = "has disconnected"
+    ms = " is disconnected"
     io.emit('chat message',socket.username, ms)
   });
 
